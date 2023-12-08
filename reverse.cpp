@@ -1,15 +1,34 @@
 #include<iostream>
+#include<vector>
 using namespace std;
+void display(vector<int>&a){
+for(int i=0;i<=a.size()-1;i++){
+    cout<<a[i]<<" ";
+}
+cout<<endl;
+}
+
 int main(){
-    int n;
-    cout<<"Enter the number n:";
-    int lastdigit=0;
-    int r=0;
-    while(n>0){
-        r=r*10;
-        lastdigit=n%10;
-        r +=lastdigit;
-        n/=10;
+    vector<int> v;
+    v.push_back(1);
+    v.push_back(2);
+    v.push_back(3);
+    v.push_back(4);
+    v.push_back(5);
+    v.push_back(6);
+    display(v);
+
+
+    int i=0;
+    int j=v.size()-1;
+    while(i<=j){
+        int temp;
+        v[i]=v[j];
+        temp=v[i];
+        v[j]=temp;
+        i++;
+        j--;
+
     }
-cout<<r<<endl;
+    display(v);
 }
